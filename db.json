@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1674023584209,
+      "taskContent": "Первая задача",
+      "isCompleted": true
+    },
+    {
+      "id": 1674024140039,
+      "taskContent": "Вторая задача - любимая",
+      "isCompleted": false
+    },
+    {
+      "id": 1674024153543,
+      "taskContent": "Супер сложная задача",
+      "isCompleted": true
+    },
+    {
+      "id": 1674042127349,
+      "taskContent": "нормальная задача",
+      "isCompleted": true
+    },
+    {
+      "id": 1674043262821,
+      "taskContent": "fwefw fwef fg kuk ykyu",
+      "isCompleted": true
+    },
+    {
+      "id": 1674044160495,
+      "taskContent": "      Первая задача",
+      "isCompleted": false
+    }
+  ]
+}
