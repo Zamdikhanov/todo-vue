@@ -28,6 +28,16 @@ export default {
     this.getToDo();
   },
   methods: {
+    addToDoLocal(task) {
+      this.tasks.push(task);
+    },
+    deleteToDoLocal(id) {
+      this.tasks = this.tasks.filter(el => el.id !== id);
+    },
+    replaceToDoLocal(task) {
+      let index = this.tasks.findIndex(el => el.id === task.id);
+      this.tasks[index] = task;
+    },
     async getToDo() {
       try {
         const response = await axios.get(`${this.BASE_URL}/tasks`);
@@ -39,7 +49,8 @@ export default {
     async postToDo(data) {
       try {
         await axios.post(`${this.BASE_URL}/tasks`, data);
-        await this.getToDo();
+        // await this.getToDo();
+        this.addToDoLocal(data);
       } catch (e) {
         console.log('Ошибка отправки');
       }
@@ -47,7 +58,8 @@ export default {
     async deleteToDo(id) {
       try {
         await axios.delete(`${this.BASE_URL}/tasks/${id}`);
-        await this.getToDo();
+        // await this.getToDo();
+        this.deleteToDoLocal(id);
       } catch (e) {
         console.log('Ошибка удаления');
       }
@@ -55,7 +67,8 @@ export default {
     async patchToDo(task) {
       try {
         await axios.patch(`${this.BASE_URL}/tasks/${task.id}`, task);
-        await this.getToDo();
+        // await this.getToDo();
+        this.replaceToDoLocal(task);
       } catch (e) {
         console.log('Ошибка изменения');
       }
