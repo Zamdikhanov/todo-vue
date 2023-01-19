@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     addTask() {
-      if (this.form.input.trim() == "") return;
+      if (this.form.input.trim() === "") return;
       let task = {
         id: Date.now(),
         taskContent: this.form.input,
